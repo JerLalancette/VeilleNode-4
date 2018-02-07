@@ -52,7 +52,30 @@ app.get('/membres', (req, res) => {
 
         console.log(membres[0].prenom)
 
-        res.end(data);
+        let html = "<html>";
+        html += "<style> td{border: 1px solid red;}";
+        html += "</style>";
+        html += "<thead>";
+        html += "les Membres";
+        html += "</thead>";
+
+        html += "<table>";
+        for (let nom in membres) {
+            html += "<tr>";
+            html += "<td>";
+            html += membres[0];
+            html += "</td>";
+            html += "<td>";
+            html += membres[1];
+            html += "</td>";
+            html += "</tr>";
+        }
+        html += "</table>";
+        html += "</html>"
+
+        res.writeHead(200, {"Content-Type": "text/html; Charset=UTF-8"});
+        res.write(html); 
+        res.end();
     }) ;
 
 });
