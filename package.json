@@ -1,0 +1,23 @@
+{
+  "name": "veillenode-4",
+  "version": "1.0.0",
+  "description": "exercice 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "for",
+    "of",
+    "for",
+    "in",
+    "route",
+    "formulaire"
+  ],
+  "author": "Jérémie Lalancette",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
