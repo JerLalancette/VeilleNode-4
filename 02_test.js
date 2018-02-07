@@ -60,13 +60,23 @@ app.get('/membres', (req, res) => {
         html += "</thead>";
 
         html += "<table>";
-        for (let nom in membres) {
+        for (let utilisateur in membres) {
             html += "<tr>";
+            html += "<th>Nom</th>";
             html += "<td>";
-            html += membres[0];
+            html += membres[utilisateur].nom;
             html += "</td>";
+            html += "<th>Prenom</th>";
             html += "<td>";
-            html += membres[1];
+            html += membres[utilisateur].prenom;
+            html += "</td>";
+            html += "<th>telephone</th>";
+            html += "<td>";
+            html += membres[utilisateur].telephone;
+            html += "</td>";
+            html += "<th>courriel</th>";
+            html += "<td>";
+            html += membres[utilisateur].courriel;
             html += "</td>";
             html += "</tr>";
         }
