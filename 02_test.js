@@ -26,15 +26,15 @@ console.log('la route /traiter_get')
  courriel:req.query.courriel
  };
 console.log(reponse);
- res.end(JSON.stringify(reponse + ","));
+ res.end(JSON.stringify(reponse));
 
- fs.readFile('membres.json', 'utf-8', (err,data) => {
+ fs.readFile('membres.json', 'utf8', (err,data) => {
     if (err) throw(err);
     let liste = JSON.parse(data);
     liste.push(reponse);
     console.log('sauvé');
 
-    fs.readFile('membres.json', JSON.stringify(liste), (err, data) => {
+    fs.writeFile('membres.json', JSON.stringify(liste), (err, data) => {
         if (err) throw(err);
     }) ;
 
@@ -49,9 +49,13 @@ app.get('/membres', (req, res) => {
     fs.readFile('membres.json', 'utf8', (err, data) => {
         if (err) throw(err);
         let membres = JSON.parse(data);
+
+        console.log(membres[0].prenom)
+
+        res.end(data);
     }) ;
 
-})
+});
 
 const server = app.listen(8081, () => {
  let host = server.address().address
