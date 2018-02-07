@@ -20,6 +20,8 @@ console.log('la route /traiter_get')
  reponse = {
  prenom:req.query.prenom,
  nom:req.query.nom
+ telephone:req.query.telephone
+ courriel:req.query.courriel
  };
 console.log(reponse);
  res.end(JSON.stringify(reponse));
